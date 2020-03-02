@@ -17,10 +17,14 @@ void loop() {
   //Se realizan las conversiones necesarias
   voltaje = (lectura*5)/1023; 
   double gradosCentigrados = voltaje*100;
+  double gradosFarenheit = (gradosCentigrados * 9/5) + 32;
   //Se muestra la temperatura.
   Serial.print("Temperatura: ");
   Serial.print(gradosCentigrados);
-  Serial.println("C°");
+  Serial.print("C°");
+  Serial.print(" o bien, ");
+  Serial.print(gradosFarenheit);
+  Serial.println("F°");
 
 
   //encender un led si la temperatura es menor a 15
@@ -39,4 +43,5 @@ void loop() {
     digitalWrite(3,LOW);
     digitalWrite(4,HIGH);
   }
+  delay(1000);
 }

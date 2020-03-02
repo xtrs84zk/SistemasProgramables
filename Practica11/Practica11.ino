@@ -11,7 +11,7 @@ void loop() {
   //Se lee desde el arduino[A0]
   lectura = analogRead(A0);
   //Se realizan las conversiones necesarias
-  voltaje = (lectura*5)/1023;
+  voltaje = (lectura*5)/1023; 
   double gradosCentigrados = voltaje*100;
   //Se muestra la temperatura.
   Serial.print("Temperatura: ");

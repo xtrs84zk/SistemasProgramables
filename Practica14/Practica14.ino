@@ -22,9 +22,15 @@ void loop() {
     Serial.println("Error de lectura de datos");
     return;
   } else { //en caso de recibir información limpia, se imprime
-     Serial.println(gradosC);
-  Serial.println(humedad);
-  Serial.println(gradosF);
+  Serial.println("");
+  Serial.print("La temperatura es: ");
+  Serial.print(gradosC);
+  Serial.print("C°, o bien, ");
+  Serial.print(gradosF);
+  Serial.println("F°");
+  Serial.print("La humedad está al ");
+  Serial.print(humedad);
+  Serial.println("%");
   }
   
 }
