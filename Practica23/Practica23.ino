@@ -1,7 +1,5 @@
 int pin_Trig = 3;
 int pin_Echo = 2;
-int ledUno = 5;
-int ledDos = 6;
 double duracion = 0;
 double tiempo = 0;
 double distancia = 0;
@@ -9,8 +7,6 @@ double distancia = 0;
 void setup() {
   pinMode(pin_Trig,OUTPUT);
   pinMode(pin_Echo,INPUT);
-  pinMode(ledUno,OUTPUT);
-  pinMode(ledDos,OUTPUT);
   Serial.begin(9600);
 }
 
@@ -26,15 +22,4 @@ void loop() {
 
   Serial.println(distancia);
   delay(500);
-
-  //si la distancia es >= 2 y <= 15cm .: encender led 1
-  if(distancia>= 2 && distancia < 15){
-    digitalWrite(ledUno,HIGH);
-    digitalWrite(ledDos,LOW); 
-  }
-  //si no .: encender led dos
-  if(distancia >= 15 ) {
-    digitalWrite(ledUno,LOW);
-    digitalWrite(ledDos,HIGH);
-  }
 }
