@@ -51,10 +51,7 @@ void loop()
             }
         }
     }
-    Serial.println(codigo);
-    delay(10);
     switch (codigo)
-    
     {
     case 'A':
         avanzar();
@@ -74,7 +71,7 @@ void loop()
     case 'Y':
         sentientMode();
         break;
-    case 't':
+    default:
         parar();
         break;
     }
@@ -156,7 +153,7 @@ void sentientMode()
     tiempo = duracion / 2;
     distancia = 0.03432 * tiempo;
 
-    if (distancia >= 2 && distancia <= 15)
+    if (distancia >= 2 && distancia <= 26)
     {
         digitalWrite(izquierdaA, LOW);
         digitalWrite(izquierdaB, LOW);
